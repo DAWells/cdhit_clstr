@@ -1,0 +1,8 @@
+.spyproject/
+*__pycache__/
+*.code-workspace
+__init__.py
+
+data/
+docs/
+notebooks/
