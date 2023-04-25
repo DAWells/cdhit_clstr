@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
+import sys
 import re
 import pandas as pd
 
-file = "data/raw/eg.clstr"
-output = "data/processed/eg.csv"
+file = sys.argv[1]
+output = sys.argv[2]
 
 with open(file, "r") as f:
     lines = f.readlines()
