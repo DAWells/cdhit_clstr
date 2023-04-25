@@ -17,10 +17,11 @@ for l in lines:
     else:
         row = re.split("\s", l)
         row = [x for x in row if not x in ["at",""]]
+        row = [cluster] + row
         clstr_tab.append(row)
 
 clstr_tab = pd.DataFrame(clstr_tab,
-    columns=['pos_in_cluster','len','name','identity'])
+    columns=['cluster','pos_in_cluster','len','name','identity'])
 clstr_tab.len = clstr_tab.len.replace("[a-zA-Z]*,", "", regex=True)
 clstr_tab.name = clstr_tab.name.str.replace(">", "")
 clstr_tab.identity = clstr_tab.identity.replace("*", "100")
